@@ -1,7 +1,11 @@
+#theForm {
+    background-color: rgba(187, 183, 183, 0.3);
+    border-top: 5px dotted black;
+    margin-top: 20px;
 .formContainer {
-    width: 1024px;
-    margin: auto;
-    
+    // width: 1024px;
+    margin: 0 auto;
+    padding: 20px;
     h1 {
         display: flex;
         justify-content: center;
@@ -11,9 +15,9 @@
         display: flex;
         justify-content: center;
         form {
-            width: 50%;
+            width: 40%;
             textarea {
-                height: 200px;
+                height: 150px;
             }
         }
         button {
@@ -21,4 +25,5 @@
             margin: auto;
         }
     }
+}
 }

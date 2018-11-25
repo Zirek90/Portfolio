@@ -29,6 +29,12 @@ class MenuElements extends Component {
                             Projects
                             </Link>
                         </NavItem>
+                        <NavItem eventKey={3} componentClass="span">
+                            <Link to="/pathLink#theForm"
+                                  scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
+                            Contact
+                            </Link>
+                        </NavItem>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const path = require('path');
+const login = require('./user');
 
 const app = new express();
 
@@ -24,8 +26,8 @@ app.post('/api/form', (req, res) => {
             host: 'smtp.ethereal.email',
             port: 587,
             auth: {
-                user: 'qm4zniibt6io4nuo@ethereal.email',
-                pass: 'mT4HtywcfQwvpdzA6d'
+                user: login.user,
+                pass: login.pass
             }
         })
 
@@ -55,7 +57,6 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static('portfolio/build'));
   
     // Express serve up index.html file if it doesn't recognize route
-    const path = require('path');
     app.get('*', (req, res) => {
       res.sendFile(path.resolve(__dirname, 'portfolio', 'build', 'index.html'));
     });

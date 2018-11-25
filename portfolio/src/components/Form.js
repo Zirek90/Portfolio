@@ -8,7 +8,7 @@ class FormComponent extends Component {
         this.state= {
             name: '',
             email:'',
-            message:''
+            message: ''
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -24,55 +24,65 @@ class FormComponent extends Component {
         e.preventDefault();
 
         const { name, email, message } = this.state;
+        if (this.state.name !== '' && this.state.email !== '' && this.state.message !== '') {
         
-        await fetch('/api/form', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-              },
-            body: JSON.stringify({name,email,message}),
-        }).then(
-        this.setState({
-            name: '',
-            email: '',
-            message: '',
-        }))
+            await fetch('/api/form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({name,email,message}),
+            }).then(
+            this.setState({
+                name: '',
+                email: '',
+                message: '',
+            })).then(
+                alert('Form submited')
+            )
+        } else {
+             alert('Please fill all form')
+        }
     }
 
     render() {
         return (
+            <div id='theForm'>
+
             <div className="formContainer">
-            <h1>Form</h1>
-            <div className="formList">
-            <Form onSubmit={this.handleSubmit}>
-                <FormGroup>
-                    <ControlLabel>Name:</ControlLabel>
-                    <FormControl 
-                        type='text' 
-                        name='name'
-                        value={this.state.name} 
-                        onChange={this.handleChange} />
-                </FormGroup>
-                <FormGroup>
-                    <ControlLabel>Email:</ControlLabel>
-                    <FormControl 
-                        type='email' 
-                        name='email' 
-                        value={this.state.email} 
-                        onChange={this.handleChange} />
-                </FormGroup>
-                <FormGroup>
-                    <ControlLabel>Your message:</ControlLabel>
-                    <FormControl 
-                        componentClass='textarea' 
-                        name='message'
-                        value={this.state.message}  
-                        onChange={this.handleChange} />
-                </FormGroup>
-                <Button type='submit'>Submit</Button>
-            </Form>
+                <h1>Contact Form</h1>
+                <div className="formList">
+                    <Form onSubmit={this.handleSubmit}>
+                        <FormGroup>
+                            <ControlLabel>Name:</ControlLabel>
+                            <FormControl 
+                                type='text' 
+                                name='name'
+                                value={this.state.name} 
+                                onChange={this.handleChange} />
+                        </FormGroup>
+                        <FormGroup>
+                            <ControlLabel>Email:</ControlLabel>
+                            <FormControl 
+                                type='email' 
+                                name='email' 
+                                value={this.state.email} 
+                                onChange={this.handleChange} />
+                        </FormGroup>
+                        <FormGroup>
+                            <ControlLabel>Your message:</ControlLabel>
+                            <FormControl 
+                                componentClass='textarea' 
+                                name='message'
+                                value={this.state.message}  
+                                onChange={this.handleChange} />
+                        </FormGroup>
+                        <Button type='submit'>Submit</Button>
+                    </Form>
+                </div>
             </div>
             </div>
+
         );
     }
 }
