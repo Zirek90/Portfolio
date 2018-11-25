@@ -1,0 +1,24 @@
+.skills-header > h1 {
+  text-align: center;
+  font-size: 5rem;
+  padding-top: 10px;
+
+}
+
+.skills {
+  padding: 10px;
+  .skills-wrapper {
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    .skills-pic {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+
+//center last element
+.next-row>div:last-child {
+  margin-left: 25%;
+}

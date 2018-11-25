@@ -1,0 +1,45 @@
+$transitionOfHeader: ease-in 0.5s;
+
+@media (min-width: 616px) {
+  .header {
+    h3 {
+      font-size: 400%;
+      transition: $transitionOfHeader;
+    }
+    p {
+      font-size: 250%;
+      transition: $transitionOfHeader;
+    }
+  }
+}
+
+@media (max-width: 615px) {
+  .header {
+    h3 {
+      font-size: 300%;
+      transition: $transitionOfHeader;
+    }
+    p {
+      font-size: 150%;
+      transition: $transitionOfHeader;
+    }
+  }
+}
+
+#topPart {
+  height: 100vh;
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    h3 {
+      color: white;
+      font-weight: bold;
+    }
+    p {
+      color: white;
+      margin: 0;
+    }
+  }
+}
