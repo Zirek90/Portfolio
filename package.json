@@ -29,6 +29,6 @@
     "server": "nodemon index.js",
     "client": "npm run start --prefix portfolio",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix portfolio && npm run build --prefix portfolio"
   }
 }
