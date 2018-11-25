@@ -41,7 +41,9 @@ class FormComponent extends Component {
 
     render() {
         return (
-            <div style={{width: '1024px', margin: 'auto'}}>
+            <div className="formContainer">
+            <h1>Form</h1>
+            <div className="formList">
             <Form onSubmit={this.handleSubmit}>
                 <FormGroup>
                     <ControlLabel>Name:</ControlLabel>
@@ -69,6 +71,7 @@ class FormComponent extends Component {
                 </FormGroup>
                 <Button type='submit'>Submit</Button>
             </Form>
+            </div>
             </div>
         );
     }

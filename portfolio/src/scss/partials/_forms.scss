@@ -1,0 +1,24 @@
+.formContainer {
+    width: 1024px;
+    margin: auto;
+    
+    h1 {
+        display: flex;
+        justify-content: center;
+        font-size: 5rem;
+    }
+    .formList {
+        display: flex;
+        justify-content: center;
+        form {
+            width: 50%;
+            textarea {
+                height: 200px;
+            }
+        }
+        button {
+            display: flex;
+            margin: auto;
+        }
+    }
+}
