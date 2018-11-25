@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const path = require('path');
-const login = require('/user');
+// const login = require('/user');
 
 const app = new express();
 
@@ -26,8 +26,8 @@ app.post('/api/form', (req, res) => {
             host: 'smtp.wp.pl',
             port: 465,
             auth: {
-                user: login.user,
-                pass: login.pass
+                user: 'qm4zniibt6io4nuo@ethereal.email',
+                pass: 'mT4HtywcfQwvpdzA6d'
             }
         })
 
