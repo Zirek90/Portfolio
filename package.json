@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "cacheDirectories": [
+    "node_modules",
+    "portfolio/node_modules"
+  ],
+  "engines": {
+    "node": "8.9.x"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "concurrently": "^4.1.0",
