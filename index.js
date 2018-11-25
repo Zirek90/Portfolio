@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const path = require('path');
-const login = require('./user');
 
 const app = new express();
 
@@ -23,17 +22,17 @@ app.post('/api/form', (req, res) => {
         `
 
         let transporter = nodemailer.createTransport({
-            host: 'smtp.wp.pl',
-            port: 465,
+            host: 'smtp.ethereal.email',
+            port: 587,
             auth: {
-                user: login.user,
-                pass: login.pass
+                user: 'qm4zniibt6io4nuo@ethereal.email',
+                pass: 'mT4HtywcfQwvpdzA6d'
             }
         })
 
         let mailOptions = {
-            from: 'm.grzymowicz@wp.pl',
-            to: 'm.grzymowicz@wp.pl',
+            from: 'test@requestaccount.com',
+            to: 'qm4zniibt6io4nuo@ethereal.email',
             // replyTo: 'test@requestaccount.com',
             subject: 'New Message',
             text: req.body.message,
@@ -44,23 +43,23 @@ app.post('/api/form', (req, res) => {
             if (err) {
                 return console.log(err);
             }
-            // console.log('Message sent: %s', info.messageId);
-            // console.log('Message URL: %s', nodemailer.getTestMessageUrl(info));
+            console.log('Message sent: %s', info.messageId);
+            console.log('Message URL: %s', nodemailer.getTestMessageUrl(info));
             
             
         })
     })   
 })
 
-// if (process.env.NODE_ENV === 'production') {
-//     // Exprees will serve up production assets
-//     app.use(express.static('portfolio/build'));
+if (process.env.NODE_ENV === 'production') {
+    // Exprees will serve up production assets
+    app.use(express.static('portfolio/build'));
   
-//     // Express serve up index.html file if it doesn't recognize route
-//     app.get('*', (req, res) => {
-//       res.sendFile(path.resolve(__dirname, 'portfolio', 'build', 'index.html'));
-//     });
-//   }
+    // Express serve up index.html file if it doesn't recognize route
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'portfolio', 'build', 'index.html'));
+    });
+  }
 
 
 const PORT = process.env.PORT || 3001
