@@ -52,15 +52,15 @@ app.post('/api/form', (req, res) => {
     })   
 })
 
-if (process.env.NODE_ENV === 'production') {
-    // Exprees will serve up production assets
-    app.use(express.static('portfolio/build'));
+// if (process.env.NODE_ENV === 'production') {
+//     // Exprees will serve up production assets
+//     app.use(express.static('portfolio/build'));
   
-    // Express serve up index.html file if it doesn't recognize route
-    app.get('*', (req, res) => {
-      res.sendFile(path.resolve(__dirname, 'portfolio', 'build', 'index.html'));
-    });
-  }
+//     // Express serve up index.html file if it doesn't recognize route
+//     app.get('*', (req, res) => {
+//       res.sendFile(path.resolve(__dirname, 'portfolio', 'build', 'index.html'));
+//     });
+//   }
 
 
 const PORT = process.env.PORT || 3001
