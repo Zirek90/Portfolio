@@ -23,8 +23,8 @@ app.post('/api/form', (req, res) => {
         `
 
         let transporter = nodemailer.createTransport({
-            host: 'smtp.ethereal.email',
-            port: 587,
+            host: 'smtp.wp.pl',
+            port: 465,
             auth: {
                 user: login.user,
                 pass: login.pass
@@ -32,8 +32,8 @@ app.post('/api/form', (req, res) => {
         })
 
         let mailOptions = {
-            from: 'test@requestaccount.com',
-            to: 'qm4zniibt6io4nuo@ethereal.email',
+            from: 'm.grzymowicz@wp.pl',
+            to: 'm.grzymowicz@wp.pl',
             // replyTo: 'test@requestaccount.com',
             subject: 'New Message',
             text: req.body.message,
@@ -44,8 +44,8 @@ app.post('/api/form', (req, res) => {
             if (err) {
                 return console.log(err);
             }
-            console.log('Message sent: %s', info.messageId);
-            console.log('Message URL: %s', nodemailer.getTestMessageUrl(info));
+            // console.log('Message sent: %s', info.messageId);
+            // console.log('Message URL: %s', nodemailer.getTestMessageUrl(info));
             
             
         })
