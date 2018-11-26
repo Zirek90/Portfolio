@@ -23,18 +23,18 @@ app.post('/api/form', (req, res) => {
         <p>${req.body.message}</p>
         `
 
-        let s3 = new aws.S3({
-            accessKeyId: process.env.EMAIL_USER,
-            secretAccessKey: process.env.PASSWORD_USER
-          });
+       
+            let user_email =  process.env.EMAIL_USER;
+            let user_password = process.env.PASSWORD_USER;
+        
 
 
         let transporter = nodemailer.createTransport({
             host: 'smtp.wp.pl',
             port: 465,
             auth: {
-                user: accessKeyId,
-                pass: secretAccessKey
+                user: user_email,
+                pass: user_password
             }
         })
 
