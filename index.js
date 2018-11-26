@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const path = require('path');
-const aws = require('aws-sdk');
+// const aws = require('aws-sdk');
 // const login = require('/user');
 
 const app = new express();
@@ -23,18 +23,18 @@ app.post('/api/form', (req, res) => {
         <p>${req.body.message}</p>
         `
 
-       
-            let user_email =  process.env.EMAIL_USER;
-            let user_password = process.env.PASSWORD_USER;
-        
+        // let s3 = new aws.S3({
+        //     accessKeyId: process.env.login,
+        //     secretAccessKey: process.env.pass
+        //   });
 
 
         let transporter = nodemailer.createTransport({
             host: 'smtp.wp.pl',
             port: 465,
             auth: {
-                user: user_email,
-                pass: user_password
+                user: process.env.login,
+                pass: process.env.pass
             }
         })
 
