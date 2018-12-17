@@ -25,8 +25,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node index.js",
-    "server": "nodemon index.js",
+    "start": "node app.js",
+    "server": "nodemon app.js",
     "client": "npm run start --prefix portfolio",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix portfolio && npm run build --prefix portfolio"

@@ -26,7 +26,7 @@ class FormComponent extends Component {
         const { name, email, message } = this.state;
         if (this.state.name !== '' && this.state.email !== '' && this.state.message !== '') {
         
-            await fetch('/api/form', {
+            await fetch('/form', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

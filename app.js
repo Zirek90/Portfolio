@@ -10,7 +10,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 
-app.post('/api/form', (req, res) => {
+app.post('/form', (req, res) => {
     nodemailer.createTestAccount((err, account) => {
         const htmlEmail = `
         <h3>Contact Details</h3>
@@ -27,14 +27,14 @@ app.post('/api/form', (req, res) => {
             host: 'smtp.wp.pl',
             port: 465,
             auth: {
-                user: process.env.LOGIN,
-                pass: process.env.PASSWORD
+                user: 'zireael90@gmail.com',
+                pass: 'zirek1990'
             }
         })
 
         let mailOptions = {
-            from: 'm.grzymowicz@wp.pl',
-            to: 'm.grzymowicz@wp.pl',
+            from: 'zireael90@gmail.com',
+            to: 'zireael90@gmail.com',
             // replyTo: 'test@requestaccount.com',
             subject: 'New Message',
             text: req.body.message,
