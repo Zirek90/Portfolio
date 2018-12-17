@@ -27,7 +27,7 @@ app.post('/api/form', (req, res) => {
             host: 'smtp.wp.pl',
             port: 465,
             auth: {
-                user: 'm.grzymowicz@wp.pl',
+                user: process.env.login,
                 pass: process.env.pass
             }
         })
