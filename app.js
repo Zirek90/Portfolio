@@ -27,14 +27,14 @@ app.post('/form', (req, res) => {
             host: 'smtp.wp.pl',
             port: 465,
             auth: {
-                user: 'zireael90@gmail.com',
-                pass: 'zirek1990'
+                user: 'm.grzymowicz@wp.pl',
+                pass: 'Hartono90'
             }
         })
 
         let mailOptions = {
-            from: 'zireael90@gmail.com',
-            to: 'zireael90@gmail.com',
+            from: 'm.grzymowicz@wp.pl',
+            to: 'm.grzymowicz@wp.pl',
             // replyTo: 'test@requestaccount.com',
             subject: 'New Message',
             text: req.body.message,
