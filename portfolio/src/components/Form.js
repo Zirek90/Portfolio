@@ -45,7 +45,8 @@ class FormComponent extends Component {
         }
     }
 
-    render() {
+
+    render() { 
         return (
             <div id='theForm'>
 
