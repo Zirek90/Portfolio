@@ -72,6 +72,9 @@ a:-webkit-any-link:hover {
     .skills .skills-wrapper .skills-pic {
       width: 150px;
       height: 150px; }
+  .skills:nth-child(1) > .skills-wrapper:nth-child(-n+3) > img {
+    width: 110px;
+    height: 180px; }
 
 .next-row > div:last-child {
   margin-left: 25%; }

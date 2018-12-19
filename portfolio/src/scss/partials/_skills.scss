@@ -16,6 +16,11 @@
       height: 150px;
     }
   }
+  //first row of skills
+  &:nth-child(1)>.skills-wrapper:nth-child(-n+3)>img {
+    width: 110px;
+    height: 180px;
+  }
 }
 
 //center last element
