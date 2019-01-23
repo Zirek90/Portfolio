@@ -3,6 +3,7 @@ import {Grid, Row, Col } from 'react-bootstrap';
 import WOW from 'wowjs';
 
 import AboutMe from "./subcomponents/HeaderPart/AboutMe";
+import download from '../img/download.png'
 
 import { actions } from '../actions/action';
 let ReactRedux = require('react-redux');
@@ -25,7 +26,8 @@ class Header extends Component {
                 <Row className="show-grid text-center header">
                     <Col xs={12} sm={10} className="person-wrapper">
                         <AboutMe
-                            content={content.home}/>
+                            content={content.home}
+                            download={download}/>
                     </Col>
                 </Row>
             </Grid>

@@ -1,5 +1,4 @@
 .lower-part {
-  // margin-top: 20px;
   background-color: #d3d3d3;
   .col-xs-2 {
     width: auto;
@@ -45,7 +44,7 @@
 
 @media (max-width: 767px) {
   .footer {
-    font-size: 80%;
+    font-size: 0.8rem;
   }
   .footer-social-media {
     margin-left: 10px;

@@ -1,8 +1,10 @@
-body {
-  background-color: #f1f1f1;
-  font-family: 'Raleway', 'Arial', sans-serif;
-  margin: 0;
-  padding: 0; }
+html {
+  font-size: 14px; }
+  html body {
+    background-color: #f1f1f1;
+    font-family: 'Raleway', 'Arial', sans-serif;
+    margin: 0;
+    padding: 0; }
 
 .main-menu {
   position: fixed;
@@ -85,18 +87,18 @@ body {
 
 @media (min-width: 616px) {
   .header h3 {
-    font-size: 400%;
+    font-size: 3.9rem;
     transition: ease-in 0.5s; }
   .header p {
-    font-size: 250%;
+    font-size: 2rem;
     transition: ease-in 0.5s; } }
 
 @media (max-width: 615px) {
   .header h3 {
-    font-size: 300%;
+    font-size: 2.8rem;
     transition: ease-in 0.5s; }
   .header p {
-    font-size: 150%;
+    font-size: 1.3rem;
     transition: ease-in 0.5s; } }
 
 #topPart {
@@ -115,7 +117,7 @@ body {
 
 .skills-header > h1 {
   text-align: center;
-  font-size: 5rem;
+  font-size: 4rem;
   padding-top: 10px; }
 
 .skills {
@@ -148,23 +150,23 @@ body {
 
 @media (max-width: 739px) {
   .description-project {
-    font-size: 90%;
+    font-size: 0.8rem;
     transition: ease-in 0.5s; } }
 
 @media (min-width: 740px) {
   .description-project {
-    font-size: 130%;
+    font-size: 1.1rem;
     transition: ease-in 0.5s; } }
 
 @media (max-width: 527px) {
   .description-project {
-    font-size: 70%;
+    font-size: 0.5rem;
     width: 90.5%; } }
 
 .projects-header {
   padding-top: 10px; }
   .projects-header h1 {
-    font-size: 5rem; }
+    font-size: 4rem; }
 
 .projects-list {
   display: flex;
@@ -192,8 +194,7 @@ body {
     padding: 20px; }
     #theForm .formContainer h1 {
       display: flex;
-      justify-content: center;
-      font-size: 5rem; }
+      justify-content: center; }
     #theForm .formContainer .formList {
       display: flex;
       justify-content: center; }
@@ -204,6 +205,14 @@ body {
       #theForm .formContainer .formList button {
         display: flex;
         margin: auto; }
+
+@media (max-width: 615px) {
+  .formContainer > h1 {
+    font-size: 2.4rem; } }
+
+@media (min-width: 616px) {
+  .formContainer > h1 {
+    font-size: 4rem; } }
 
 .lower-part {
   background-color: #d3d3d3; }
@@ -239,7 +248,7 @@ body {
 
 @media (max-width: 767px) {
   .footer {
-    font-size: 80%; }
+    font-size: 0.8rem; }
   .footer-social-media {
     margin-left: 10px;
     display: flex;

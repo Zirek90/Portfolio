@@ -3,11 +3,11 @@ $transitionOfHeader: ease-in 0.5s;
 @media (min-width: 616px) {
   .header {
     h3 {
-      font-size: 400%;
+      font-size: 3.9rem;
       transition: $transitionOfHeader;
     }
     p {
-      font-size: 250%;
+      font-size: 2rem;
       transition: $transitionOfHeader;
     }
   }
@@ -16,11 +16,11 @@ $transitionOfHeader: ease-in 0.5s;
 @media (max-width: 615px) {
   .header {
     h3 {
-      font-size: 300%;
+      font-size: 2.8rem;
       transition: $transitionOfHeader;
     }
     p {
-      font-size: 150%;
+      font-size: 1.3rem;
       transition: $transitionOfHeader;
     }
   }
