@@ -1,0 +1,77 @@
+[{
+        "lang": "pl",
+        "page": {
+            "menu": {
+                "home": "Strona Główna",
+                "technologies": "Technologie",
+                "projects": "Projekty",
+                "form": "Formularz",
+                "contact": "Kontakt"
+            },
+            "home": {
+                "header": "Junior Front-end Developer",
+                "paragraphOne": "Szukasz Junior Front-end Developera do swojej firmy bądź projektu?",
+                "paragraphTwo": "Wlaśnie go znalazleś! Aby obejrzeć moje CV, kliknij w link poniżej"
+            },
+            "technologies": {
+                "header": ""
+            }
+        },
+        "projects": {
+            "header": "Moje projekty"
+        },
+        "form": {
+            "header": "Formularz kontaktowy",
+            "name": "Imię",
+            "email": "email",
+            "message": "Twoja wiadomość",
+            "submit": "wyślij"
+        },
+        "contact": {
+            "header": "Junior Front-end Developer",
+            "aboutMe": "Mateusz Grzymowicz, Junior front-end developer",
+            "socialMedia": {
+                "visit": "Odwiedź mój",
+                "contact": "Skontaktuj się ze mną"
+            }
+        }
+    },
+    {
+        "lang": "en",
+        "page": {
+            "menu": {
+                "home": "Home",
+                "technologies": "Technologies",
+                "projects": "Projects",
+                "form": "Form",
+                "contact": "Contact"
+            },
+            "home": {
+                "header": "Junior Front-end Developer",
+                "paragraphOne": "Looking for Junior Front-End developer?",
+                "paragraphTwo": "Look no more as you just found him! Click link below to download my CV"
+            },
+            "technologies": {
+                "header": ""
+            }
+        },
+        "projects": {
+            "header": "My projects"
+        },
+        "form": {
+            "header": "Form",
+            "name": "Name",
+            "email": "Email",
+            "message": "Your message",
+            "submit": "Submit"
+        },
+        "contact": {
+            "header": "Junior Front-end Developer",
+            "aboutMe": "Mateusz Grzymowicz, Junior front-end developer graduate of bootcamp „Front-end Developer:React” by CodersLab is willing to be employed soon. I'm a very enthusiastic person, full of passion and desires to obtain knowledge and necessary experience as a front-end developer especially with React library.",
+            "socialMedia": {
+                "visit": "Visit my",
+                "contact": "Contact me"
+            }
+        }
+    }
+]

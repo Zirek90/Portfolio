@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Parallax} from 'react-parallax';
-
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+import content from './reducers/reducer';
 
 import MenuList from "./components/MenuList";
 import Header from "./components/Header";
@@ -12,12 +14,13 @@ import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import FormComponent from './components/Form';
 
-
+const store = createStore(content);
 
 class App extends Component {
     
     render() {
         return (
+            <Provider {... {store}}>
             <div>
                 <Parallax
                     blur={{min: -5, max: 5}}
@@ -43,6 +46,7 @@ class App extends Component {
                     <Footer/>
                 </div>
             </div>
+            </Provider>
         );
     }
 }
