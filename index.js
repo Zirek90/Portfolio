@@ -24,17 +24,19 @@ app.post('/api/form', (req, res) => {
 
 
         let transporter = nodemailer.createTransport({
-            host: 'smtp.wp.pl',
-            port: 465,
+            // host: 'smtp.wp.pl',
+            // port: 465,
+            host: 'smtp.ethereal.email',
+            port: 587,
             auth: {
-                user: 'portfolio2090@wp.pl',
-                pass: 'Mateusz90'
+                user: 'ggeymebzy35iv2nc@ethereal.email',
+                pass: 'DySF1grbzc3Rgu2bFw'
             }
         })
 
         let mailOptions = {
-            from: 'portfolio2090@wp.pl',
-            to: 'portfolio2090@wp.pl',
+            from: 'test@requestaccount.com',
+            to: 'ggeymebzy35iv2nc@ethereal.email',
             // replyTo: 'test@requestaccount.com',
             subject: 'New Message',
             text: req.body.message,
