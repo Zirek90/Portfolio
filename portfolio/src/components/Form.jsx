@@ -1,13 +1,16 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import { Form, FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap'
+
+import { actions } from '../actions/action';
+let ReactRedux = require('react-redux');
 
 class FormComponent extends Component {
     constructor(props) {
         super(props)
-        this.state= {
+        this.state = {
             name: '',
-            email:'',
+            email: '',
             message: ''
         }
         this.handleChange = this.handleChange.bind(this)
@@ -17,75 +20,80 @@ class FormComponent extends Component {
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
-        })        
+        })
     }
-    
+
     handleSubmit = async (e) => {
         e.preventDefault();
 
         const { name, email, message } = this.state;
         if (this.state.name !== '' && this.state.email !== '' && this.state.message !== '') {
-        
+
             await fetch('/api/form', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({name,email,message}),
+                body: JSON.stringify({ name, email, message }),
             }).then(
-            this.setState({
-                name: '',
-                email: '',
-                message: '',
-            })).then(
-                alert('Form submited')
-            )
+                this.setState({
+                    name: '',
+                    email: '',
+                    message: '',
+                })).then(
+                    alert('Form submited')
+                )
         } else {
-             alert('Please fill all form')
+            alert('Please fill all form')
         }
     }
 
 
-    render() { 
+    render() {
+        const content = this.props.content.page.form;
+
         return (
             <div id='theForm'>
 
-            <div className="formContainer">
-                <h1>Contact Form</h1>
-                <div className="formList">
-                    <Form onSubmit={this.handleSubmit}>
-                        <FormGroup>
-                            <ControlLabel>Name:</ControlLabel>
-                            <FormControl 
-                                type='text' 
-                                name='name'
-                                value={this.state.name} 
-                                onChange={this.handleChange} />
-                        </FormGroup>
-                        <FormGroup>
-                            <ControlLabel>Email:</ControlLabel>
-                            <FormControl 
-                                type='email' 
-                                name='email' 
-                                value={this.state.email} 
-                                onChange={this.handleChange} />
-                        </FormGroup>
-                        <FormGroup>
-                            <ControlLabel>Your message:</ControlLabel>
-                            <FormControl 
-                                componentClass='textarea' 
-                                name='message'
-                                value={this.state.message}  
-                                onChange={this.handleChange} />
-                        </FormGroup>
-                        <Button type='submit'>Submit</Button>
-                    </Form>
+                <div className="formContainer">
+                    <h1>{content.header}</h1>
+                    <div className="formList">
+                        <Form onSubmit={this.handleSubmit}>
+                            <FormGroup>
+                                <ControlLabel>{content.name}:</ControlLabel>
+                                <FormControl
+                                    type='text'
+                                    name='name'
+                                    value={this.state.name}
+                                    onChange={this.handleChange} />
+                            </FormGroup>
+                            <FormGroup>
+                                <ControlLabel>{content.email}:</ControlLabel>
+                                <FormControl
+                                    type='email'
+                                    name='email'
+                                    value={this.state.email}
+                                    onChange={this.handleChange} />
+                            </FormGroup>
+                            <FormGroup>
+                                <ControlLabel>{content.message}:</ControlLabel>
+                                <FormControl
+                                    componentClass='textarea'
+                                    name='message'
+                                    value={this.state.message}
+                                    onChange={this.handleChange} />
+                            </FormGroup>
+                            <Button type='submit'>{content.submit}</Button>
+                        </Form>
+                    </div>
                 </div>
-            </div>
             </div>
 
         );
     }
 }
 
-export default FormComponent;
+export default ReactRedux.connect(
+    (state) => ({ content: state.content }),
+    (dispatch) => ({ switchLanguage: (lang) => dispatch(actions.switchLanguage(lang)) })
+)(FormComponent);

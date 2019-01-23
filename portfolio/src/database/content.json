@@ -14,27 +14,27 @@
                 "paragraphTwo": "Wlaśnie go znalazleś! Aby obejrzeć moje CV, kliknij w link poniżej"
             },
             "technologies": {
-                "header": ""
+                "header": "Technologie"
+            },
+            "projects": {
+                "header": "Moje projekty"
+            },
+            "form": {
+                "header": "Formularz kontaktowy",
+                "name": "Imię",
+                "email": "Email",
+                "message": "Twoja wiadomość",
+                "submit": "wyślij"
+            },
+            "contact": {
+                "header": "Junior Front-end Developer",
+                "aboutMe": "Mateusz Grzymowicz, Junior front-end developer absolwent kursu programowania „Front-end Developer:React” organizowanego przez CodersLab, gotowy do pracy na pełny etat bądź przyjmowania indywidualnych zleceń. Jestem osoba pełną entauzjazmu i zapału do zdobywania wiedzy z zakresu programowania aby stać się pewnego dnia spcjalistą z zakresu front-end'u, zwłascza biblioteki React",
+                "socialMedia": {
+                    "visit": "Odwiedź mój",
+                    "contact": "Skontaktuj się ze mną"
+                }
             }
-        },
-        "projects": {
-            "header": "Moje projekty"
-        },
-        "form": {
-            "header": "Formularz kontaktowy",
-            "name": "Imię",
-            "email": "email",
-            "message": "Twoja wiadomość",
-            "submit": "wyślij"
-        },
-        "contact": {
-            "header": "Junior Front-end Developer",
-            "aboutMe": "Mateusz Grzymowicz, Junior front-end developer",
-            "socialMedia": {
-                "visit": "Odwiedź mój",
-                "contact": "Skontaktuj się ze mną"
-            }
-        }
+        }    
     },
     {
         "lang": "en",
@@ -52,25 +52,25 @@
                 "paragraphTwo": "Look no more as you just found him! Click link below to download my CV"
             },
             "technologies": {
-                "header": ""
-            }
-        },
-        "projects": {
-            "header": "My projects"
-        },
-        "form": {
-            "header": "Form",
-            "name": "Name",
-            "email": "Email",
-            "message": "Your message",
-            "submit": "Submit"
-        },
-        "contact": {
-            "header": "Junior Front-end Developer",
-            "aboutMe": "Mateusz Grzymowicz, Junior front-end developer graduate of bootcamp „Front-end Developer:React” by CodersLab is willing to be employed soon. I'm a very enthusiastic person, full of passion and desires to obtain knowledge and necessary experience as a front-end developer especially with React library.",
-            "socialMedia": {
-                "visit": "Visit my",
-                "contact": "Contact me"
+                "header": "Technologies"
+            },
+            "projects": {
+                "header": "My projects"
+            },
+            "form": {
+                "header": "Contact Form",
+                "name": "Name",
+                "email": "Email",
+                "message": "Your message",
+                "submit": "Submit"
+            },
+            "contact": {
+                "header": "Junior Front-end Developer",
+                "aboutMe": "Mateusz Grzymowicz, Junior front-end developer graduate of bootcamp „Front-end Developer:React” by CodersLab is willing to be employed soon. I'm a very enthusiastic person, full of passion and desires to obtain knowledge and necessary experience as a front-end developer especially with React library.",
+                "socialMedia": {
+                    "visit": "Visit my",
+                    "contact": "Contact me"
+                }
             }
         }
     }

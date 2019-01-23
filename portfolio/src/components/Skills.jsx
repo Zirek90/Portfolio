@@ -7,6 +7,10 @@ import {firstAndSecondRow, nextRows} from '../database/databaseSkills'
 import SkillsFirstAndSecondRow from "./subcomponents/SkillsPart/SkillsFirstAndSecondRow";
 import SkillsNextRows from "./subcomponents/SkillsPart/SkillsNextRows";
 
+import { actions } from '../actions/action';
+let ReactRedux = require('react-redux');
+
+
 class Skills extends Component {
     componentDidMount() {
         // new WOW.WOW().init();
@@ -16,9 +20,10 @@ class Skills extends Component {
     }
 
     render() {
+        
         return (
             <Grid className="skill-list" id="listOfSkills">
-                <PageHeader className="skills-header">Technologies</PageHeader>
+                <PageHeader className="skills-header">{this.props.content.page.technologies.header}</PageHeader>
                 <div className="wow zoomInRight" data-wow-duration="2s">
                     <Row className="show-grid text-center skills">
 
@@ -43,4 +48,9 @@ class Skills extends Component {
     }
 }
 
-export default Skills;
+// export default Skills;
+
+export default ReactRedux.connect(
+    (state) => ({ content: state.content }),
+    (dispatch) => ({ switchLanguage: (lang) => dispatch(actions.switchLanguage(lang)) })
+)(Skills);

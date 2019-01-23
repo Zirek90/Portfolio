@@ -2,9 +2,6 @@ import React, {Component} from 'react';
 import {Row, Col, Image} from 'react-bootstrap';
 import WOW from 'wowjs';
 
-
-
-
 class ListOfProjects extends Component {
     constructor(props) {
         super (props)
@@ -14,7 +11,6 @@ class ListOfProjects extends Component {
     }
 
     componentDidMount() {
-        // new WOW.WOW().init();
         new WOW.WOW({
             live: false
         }).init();

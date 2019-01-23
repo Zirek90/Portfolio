@@ -1,16 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
-class AboutMe extends Component {
-    render() {
-        return (
-            <div>
-                <h3>Junior Front-end Developer</h3>
-                <p>Looking for Junior Front-End developer?</p>
-                <p>Look no more as you just found him!</p>
-            </div>
-        );
-    }
-}
+const AboutMe = props => (
+    <div>
+        <h3>{props.content.header}</h3>
+        <p>{props.content.paragraphOne}</p>
+        <p>{props.content.paragraphTwo}</p>
+    </div>
+)
+
 
 export default AboutMe;

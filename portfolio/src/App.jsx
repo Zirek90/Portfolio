@@ -11,7 +11,7 @@ import Skills from "./components/Skills";
 import backgroundImage from './img/background-header.png';
 import headerBackground from './img/headerBackground.JPG';
 import Projects from "./components/Projects";
-import Footer from "./components/Footer";
+import Contact from "./components/Contact";
 import FormComponent from './components/Form';
 
 const store = createStore(content);
@@ -43,7 +43,7 @@ class App extends Component {
                 <Projects/>
                 <FormComponent />
                 <div className="lower-part">
-                    <Footer/>
+                    <Contact/>
                 </div>
             </div>
             </Provider>

@@ -4,9 +4,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import MenuElements from './subcomponents/MenuPart/MenuElements'
 import MobileMenuElements from './subcomponents/MenuPart/MobileMenuElements';
 import Backdrop from './subcomponents/MenuPart/BackFromMenu';
-// import { dispatch } from 'rxjs/internal/observable/pairs';
 import { actions } from '../actions/action';
 
+import menuData from '../../src/database/databaseMenu';
 import plFlag from '../img/plFlag.png'
 import enFlag from '../img/enFlag.png'
 
@@ -50,26 +50,28 @@ class MenuList extends Component {
             this.setState({
                 language: 'en'
             })
-        }        
+        } 
+               
     }
 
     render() {
         let backdrop;
         let photo;
+        let menuContent;
         const content = this.props.content;
         let switchLanguage = this.props.switchLanguage;
 
         if (this.state.language === 'en') {
             photo = enFlag;
+            menuContent = menuData.pl
         } else {
             photo = plFlag;
+            menuContent = menuData.en
         }
 
         if (this.state.mobileOpen) {
             backdrop = <Backdrop backdropHandler={this.backdropHandler} />
         }
-
-
 
         if (content) {
                 return (
@@ -78,9 +80,12 @@ class MenuList extends Component {
                             <MenuElements toggleMobile={this.toggleMobile}
                                 switchLanguage={switchLanguage.bind(this, `${this.state.language}`)}
                                 changeFlag={this.changeFlag}
-                                content={content.page.menu} 
+                                content={content.page}
+                                menuContent={menuContent} 
                                 flag={photo}/>
-                            <MobileMenuElements show={this.state.mobileOpen} />
+                            <MobileMenuElements 
+                                show={this.state.mobileOpen}
+                                menuContent={menuContent}/>
                             {backdrop}
                         </div>
                     </Router>
