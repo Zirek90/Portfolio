@@ -48,8 +48,6 @@ class Skills extends Component {
     }
 }
 
-// export default Skills;
-
 export default ReactRedux.connect(
     (state) => ({ content: state.content }),
     (dispatch) => ({ switchLanguage: (lang) => dispatch(actions.switchLanguage(lang)) })
