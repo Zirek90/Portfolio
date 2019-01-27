@@ -1,12 +1,11 @@
 import React from 'react';
 import { Grid, Row } from 'react-bootstrap';
+import {connect} from 'react-redux';
 
 import ContactPhoto from "./subcomponents/ContactPart/ContactPhoto";
 import ContactAboutMe from "./subcomponents/ContactPart/ContactAboutMe";
 import ContactSocialMedia from "./subcomponents/ContactPart/ContactSocialMedia";
 import ContactCopyright from "./subcomponents/ContactPart/ContactCopyright";
-import { actions } from '../actions/action';
-let ReactRedux = require('react-redux');
 
 const Contact = props => {
     const content = props.content.page.contact;
@@ -25,7 +24,9 @@ const Contact = props => {
     );
 }
 
-export default ReactRedux.connect(
-    (state) => ({ content: state.content }),
-    (dispatch) => ({ switchLanguage: (lang) => dispatch(actions.switchLanguage(lang)) })
-)(Contact)
+const mapStateToProps = (state) => {
+    return {
+        content: state.content
+    }
+}
+export default connect(mapStateToProps)(Contact);

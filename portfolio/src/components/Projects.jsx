@@ -1,11 +1,10 @@
 import React from 'react';
 import { Grid, PageHeader } from 'react-bootstrap';
+import {connect} from 'react-redux';
 
 import projects from '../database/databaseProjects';
 import ListOfProjects from "./subcomponents/ProjectPart/ListOfProjects";
 
-import { actions } from '../actions/action';
-let ReactRedux = require('react-redux');
 
 const Projects = props => (
     <Grid className="text-center" id="listOfProjects">
@@ -22,7 +21,9 @@ const Projects = props => (
     </Grid>
 )
 
-export default ReactRedux.connect(
-    (state) => ({ content: state.content }),
-    (dispatch) => ({ switchLanguage: (lang) => dispatch(actions.switchLanguage(lang)) })
-)(Projects);
+const mapStateToProps = (state) => {
+    return {
+        content: state.content
+    }
+}
+export default connect(mapStateToProps)(Projects)

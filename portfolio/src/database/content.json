@@ -24,7 +24,7 @@
                 "name": "Imię",
                 "email": "Email",
                 "message": "Twoja wiadomość",
-                "submit": "wyślij"
+                "submit": "Wyślij"
             },
             "contact": {
                 "header": "Junior Front-end Developer",

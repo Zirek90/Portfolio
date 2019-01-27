@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-
+import {connect} from 'react-redux';
 import { Form, FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap'
-
-import { actions } from '../actions/action';
-let ReactRedux = require('react-redux');
 
 class FormComponent extends Component {
     constructor(props) {
@@ -93,7 +90,9 @@ class FormComponent extends Component {
     }
 }
 
-export default ReactRedux.connect(
-    (state) => ({ content: state.content }),
-    (dispatch) => ({ switchLanguage: (lang) => dispatch(actions.switchLanguage(lang)) })
-)(FormComponent);
+const mapStateToProps = (state) => {
+    return {
+        content: state.content
+    }
+}
+export default connect(mapStateToProps)(FormComponent);

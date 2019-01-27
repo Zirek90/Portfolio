@@ -9,9 +9,7 @@ import { actions } from '../actions/action';
 import menuData from '../../src/database/databaseMenu';
 import plFlag from '../img/plFlag.png'
 import enFlag from '../img/enFlag.png'
-
-let ReactRedux = require('react-redux');
-
+import { connect } from 'react-redux'
 
 class MenuList extends Component {
     constructor(props) {
@@ -45,13 +43,13 @@ class MenuList extends Component {
             this.setState({
                 language: 'pl'
             })
-            
+
         } else {
             this.setState({
                 language: 'en'
             })
-        } 
-               
+        }
+
     }
 
     render() {
@@ -74,29 +72,37 @@ class MenuList extends Component {
         }
 
         if (content) {
-                return (
-                    <Router>
-                        <div className="main-menu">
-                            <MenuElements toggleMobile={this.toggleMobile}
-                                switchLanguage={switchLanguage.bind(this, `${this.state.language}`)}
-                                changeFlag={this.changeFlag}
-                                content={content.page}
-                                menuContent={menuContent} 
-                                flag={photo}/>
-                            <MobileMenuElements 
-                                show={this.state.mobileOpen}
-                                menuContent={menuContent}/>
-                            {backdrop}
-                        </div>
-                    </Router>
-                );
+            return (
+                <Router>
+                    <div className="main-menu">
+                        <MenuElements toggleMobile={this.toggleMobile}
+                            switchLanguage={switchLanguage.bind(this, `${this.state.language}`)}
+                            changeFlag={this.changeFlag}
+                            content={content.page}
+                            menuContent={menuContent}
+                            flag={photo} />
+                        <MobileMenuElements
+                            show={this.state.mobileOpen}
+                            menuContent={menuContent} />
+                        {backdrop}
+                    </div>
+                </Router>
+            );
         } else {
             return null;
         }
     }
 }
 
-export default ReactRedux.connect(
-    (state) => ({ content: state.content }),
-    (dispatch) => ({ switchLanguage: (lang) => dispatch(actions.switchLanguage(lang)) })
-)(MenuList);
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        switchLanguage: (lang) => dispatch(actions.switchLanguage(lang))
+    }
+}
+const mapStateToProps = (state) => {
+    return {
+        content: state
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(MenuList)

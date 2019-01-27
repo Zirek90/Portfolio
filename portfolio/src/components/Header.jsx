@@ -1,14 +1,10 @@
 import React, {Component} from 'react';
 import {Grid, Row, Col } from 'react-bootstrap';
 import WOW from 'wowjs';
+import {connect} from 'react-redux';
 
 import AboutMe from "./subcomponents/HeaderPart/AboutMe";
 import download from '../img/download.png'
-
-import { actions } from '../actions/action';
-let ReactRedux = require('react-redux');
-
-
 
 class Header extends Component {
 
@@ -35,7 +31,9 @@ class Header extends Component {
     }
 }
 
-export default ReactRedux.connect(
-    (state) => ({ content: state.content }),
-    (dispatch) => ({ switchLanguage: (lang) => dispatch(actions.switchLanguage(lang)) })
-)(Header);
+const mapStateToProps = (state) => {
+    return {
+        content: state.content
+    }
+}
+export default connect(mapStateToProps)(Header);

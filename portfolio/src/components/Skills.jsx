@@ -1,15 +1,12 @@
 import React, {Component} from 'react';
 import {Grid, Row, PageHeader} from 'react-bootstrap';
 import WOW from 'wowjs';
+import {connect} from 'react-redux';
 
 import {firstAndSecondRow, nextRows} from '../database/databaseSkills'
 
 import SkillsFirstAndSecondRow from "./subcomponents/SkillsPart/SkillsFirstAndSecondRow";
 import SkillsNextRows from "./subcomponents/SkillsPart/SkillsNextRows";
-
-import { actions } from '../actions/action';
-let ReactRedux = require('react-redux');
-
 
 class Skills extends Component {
     componentDidMount() {
@@ -48,7 +45,9 @@ class Skills extends Component {
     }
 }
 
-export default ReactRedux.connect(
-    (state) => ({ content: state.content }),
-    (dispatch) => ({ switchLanguage: (lang) => dispatch(actions.switchLanguage(lang)) })
-)(Skills);
+const mapStateToProps = (state) => {
+    return {
+        content: state.content
+    }
+}
+export default connect(mapStateToProps)(Skills)
