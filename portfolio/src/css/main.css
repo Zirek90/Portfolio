@@ -127,7 +127,9 @@ html {
   .skills .skills-wrapper {
     padding-bottom: 30px;
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    align-items: center;
+    height: 200px; }
     .skills .skills-wrapper .skills-pic {
       width: 150px;
       height: 150px; }
