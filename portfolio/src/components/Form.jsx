@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { Form, FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap'
+import axios from 'axios';
 
 class FormComponent extends Component {
     constructor(props) {
@@ -20,19 +21,14 @@ class FormComponent extends Component {
         })
     }
 
-    handleSubmit = async (e) => {
-        e.preventDefault();
-
-        const { name, email, message } = this.state;
+    handleSubmit = (e) => {
         if (this.state.name !== '' && this.state.email !== '' && this.state.message !== '') {
 
-            await fetch('/api/form', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ name, email, message }),
-            }).then(
+            axios.post(
+                "https://formcarry.com/s/eKyqzvscqCL",
+                this.state,
+                { headers: { "Accept": "application/json" } }
+            ).then(
                 this.setState({
                     name: '',
                     email: '',
@@ -40,9 +36,13 @@ class FormComponent extends Component {
                 })).then(
                     alert('Form submited')
                 )
+                .catch(function (error) {
+                    console.log(error);
+                });
         } else {
             alert('Please fill all form')
         }
+        e.preventDefault();
     }
 
 
